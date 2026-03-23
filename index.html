@@ -186,4 +186,294 @@ function logout() {
   localStorage.removeItem("loggedIn");
   window.location.href = "login.html";
 }
-</script>
+</script>/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f4f7fb, #e6ecf5);
+  color: #333;
+  min-height: 100vh;
+}
+
+/* ===== Header ===== */
+header {
+  background: linear-gradient(135deg, #0f4c81, #1e88e5);
+  color: #fff;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+header nav a:hover {
+  opacity: 0.8;
+}
+
+/* ===== Layout ===== */
+.container {
+  display: flex;
+  padding: 25px;
+  gap: 20px;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 240px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar h3 {
+  margin-bottom: 15px;
+  color: #0f4c81;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: #1e88e5;
+  color: #fff;
+}
+
+/* ===== Main Content ===== */
+.main-content {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.main-content h2 {
+  margin-bottom: 20px;
+  color: #0f4c81;
+}
+
+/* ===== Cards ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: linear-gradient(135deg, #ffffff, #f2f6fc);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+  color: #1e88e5;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ===== Buttons ===== */
+button {
+  background: #1e88e5;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #0f4c81;
+}
+
+/* ===== Tables ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  padding: 12px;
+  text-align: left;
+}
+
+table th {
+  background: #1e88e5;
+  color: #fff;
+}
+
+table tr:nth-child(even) {
+  background: #f4f7fb;
+}
+
+/* ===== Footer ===== */
+footer {
+  margin-top: 30px;
+  text-align: center;
+  padding: 15px;
+  color: #777;
+  font-size: 14px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Portal</title>
+
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Bright Future School Portal</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Students</a>
+      <a href="#">Teachers</a>
+      <a href="#">Results</a>
+      <a href="#">Logout</a>
+    </nav>
+  </header>
+
+  <!-- Main Layout -->
+  <div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Dashboard</h3>
+      <a href="#" class="active">Overview</a>
+      <a href="#">My Profile</a>
+      <a href="#">Courses</a>
+      <a href="#">Assignments</a>
+      <a href="#">Attendance</a>
+      <a href="#">Exams</a>
+      <a href="#">Settings</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h2>Welcome, Student</h2>
+
+      <!-- Cards Section -->
+      <section class="cards">
+        <div class="card">
+          <h3>My Courses</h3>
+          <p>View all registered subjects and course materials.</p>
+          <button>Open</button>
+        </div>
+
+        <div class="card">
+          <h3>Assignments</h3>
+          <p>Check pending and submitted assignments.</p>
+          <button>View</button>
+        </div>
+
+        <div class="card">
+          <h3>Attendance</h3>
+          <p>Track your daily attendance records.</p>
+          <button>Check</button>
+        </div>
+
+        <div class="card">
+          <h3>Results</h3>
+          <p>Access your examination results.</p>
+          <button>See Results</button>
+        </div>
+      </section>
+
+      <!-- Table Section -->
+      <section>
+        <h2 style="margin-top: 30px;">Recent Activities</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Activity</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>12 Mar 2026</td>
+              <td>Mathematics Assignment</td>
+              <td>Submitted</td>
+            </tr>
+            <tr>
+              <td>10 Mar 2026</td>
+              <td>English Test</td>
+              <td>Completed</td>
+            </tr>
+            <tr>
+              <td>08 Mar 2026</td>
+              <td>Science Practical</td>
+              <td>Pending</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 Bright Future School. All rights reserved.
+  </footer>
+
+</body>
+</html>
